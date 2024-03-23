@@ -1,0 +1,26 @@
+Name: Order
+Host: 0.0.0.0
+Port: 8002
+
+KqConsumerConf:
+  Name: kqConsumer
+  Group: kqConsumer
+  Brokers:
+    - 192.168.44.132:9092
+  Topic: order-kafaka
+  Offset: first
+  # Consumers: 1
+ProductRPC:
+  Etcd:
+    Hosts:
+      - 192.168.44.132:20000
+      - 192.168.44.132:20002
+      - 192.168.44.132:20004
+    Key: product.rpc
+OrderRPC:
+  Etcd:
+    Hosts:
+      - 192.168.44.132:20000
+      - 192.168.44.132:20002
+      - 192.168.44.132:20004
+    Key: order.rpc

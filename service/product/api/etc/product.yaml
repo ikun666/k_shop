@@ -1,0 +1,15 @@
+Name: Product
+Host: 0.0.0.0
+Port: 8001
+
+Auth:
+  AccessSecret: github.com/ikun666/k_shop
+  AccessExpire: 86400
+
+ProductRpc:
+  Etcd:
+    Hosts:
+    - 192.168.44.132:20000
+    - 192.168.44.132:20002
+    - 192.168.44.132:20004
+    Key: product.rpc

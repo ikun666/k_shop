@@ -1,0 +1,19 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:9000
+
+Etcd:
+  Hosts:
+  - 192.168.44.132:20000
+  - 192.168.44.132:20002
+  - 192.168.44.132:20004
+  Key: user.rpc
+
+Mysql:
+  DataSource: root:123456@tcp(192.168.44.132:3306)/k_shop?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+CacheRedis:
+- Host: 192.168.44.132:6379
+  Type: node
+  Pass:
+
+Salt: github.com/ikun666/k_shop

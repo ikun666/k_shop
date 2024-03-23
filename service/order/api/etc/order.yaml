@@ -1,0 +1,32 @@
+Name: Order
+Host: 0.0.0.0
+Port: 8002
+
+Auth:
+  AccessSecret: github.com/ikun666/k_shop
+  AccessExpire: 86400
+
+OrderRpc:
+  Etcd:
+    Hosts:
+    - 192.168.44.132:20000
+    - 192.168.44.132:20002
+    - 192.168.44.132:20004
+    Key: order.rpc
+
+ProductRpc:
+  Etcd:
+    Hosts:
+      - 192.168.44.132:20000
+      - 192.168.44.132:20002
+      - 192.168.44.132:20004
+    Key: product.rpc
+RedisConf:
+  Host: 192.168.44.132:6379
+  Type: node
+  Pass:
+
+KqPusherConf:
+  Brokers:
+    - 192.168.44.132:9092
+  Topic: order-kafaka

@@ -1,0 +1,38 @@
+Name: order.rpc
+ListenOn: 0.0.0.0:9002
+Etcd:
+  Hosts:
+  - 192.168.44.132:20000
+  - 192.168.44.132:20002
+  - 192.168.44.132:20004
+  Key: order.rpc
+Mysql:
+  DataSource: root:123456@tcp(192.168.44.132:3306)/k_shop?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+CacheRedis:
+- Host: 192.168.44.132:6379
+  Type: node
+  Pass:
+UserRpc:
+  Etcd:
+    Hosts:
+    - 192.168.44.132:20000
+    - 192.168.44.132:20002
+    - 192.168.44.132:20004
+    Key: user.rpc
+
+ProductRpc:
+  Etcd:
+    Hosts:
+    - 192.168.44.132:20000
+    - 192.168.44.132:20002
+    - 192.168.44.132:20004
+    Key: product.rpc
+
+# Mode: dev
+KqPusherConf:
+  Brokers:
+    - 192.168.44.132:9092
+  Topic: order-kafaka
+
+Mode: dev
